@@ -1,3 +1,4 @@
 Summer 2024 - PRJ301
-
-Duong branch
+Dương: backend
+Hùng: frontend
+Đăng: gõ word và excel
