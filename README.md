@@ -1,4 +1,4 @@
-# Summer 2024 - PRJ301 - Chat Prototype 🚀
+# Summer 2024 - PRJ301 - Chat Prototype
 
 ## Description:
 
