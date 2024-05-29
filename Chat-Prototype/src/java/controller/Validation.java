@@ -71,6 +71,7 @@ public class Validation {
         flag = true;
         return flag;
     }
+
 //    public boolean isValidPassword(String password) {
 //        // meet up the pattern
 //    }
