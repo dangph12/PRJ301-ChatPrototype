@@ -46,7 +46,7 @@ public class Validation {
         return flag;
     }
     public boolean isValidEmail(String email) {
-        boolean flag = true;
+        boolean flag = false;
         // username do not start-end with the hyphen and contain multiple hyphen
         // Only allows alphanumberic characters and single hyphen
         // Length of username should be min = 4, max = 20
@@ -57,19 +57,20 @@ public class Validation {
         Matcher matcher = pattern.matcher(email);
         
         if (!matcher.matches()) {
-            return flag = false;
+            return flag;
         }
         // check duplicate username
         try {
             ResultSet rs = dao.getUserByEmail(email);
             String nameOfUser = rs.getString("username");
             if (nameOfUser != null) {
-                return flag = false;
+                return flag;
             }
         } catch (Exception e) {
             //TODO: handle exception
             System.out.println("ERROR: " + e.getMessage());
         }
+        flag = true;
         return flag;
     }
 //    public boolean isValidPassword(String password) {
