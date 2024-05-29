@@ -77,18 +77,5 @@ public class DBContext {
         }
     }
     
-    public static void main(String[] args) {
-        String query = "SELECT * FROM [dbo].[Chat_Prototype]";
-        try {
-            PreparedStatement stmt = DBContext.getInstance().getConnection().prepareStatement(query);
-            if (stmt == null) {
-                System.out.println("null vcl");
-            } else {
-                System.out.println("ok rooif");
-            }
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
 }
 
