@@ -47,9 +47,7 @@ public class Validation {
     }
     public boolean isValidEmail(String email) {
         boolean flag = false;
-        // username do not start-end with the hyphen and contain multiple hyphen
-        // Only allows alphanumberic characters and single hyphen
-        // Length of username should be min = 4, max = 20
+        // The top level domain must be at least 2 characters long.
         String regex = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
         
         Pattern pattern = Pattern.compile(regex);
