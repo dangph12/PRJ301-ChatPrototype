@@ -54,14 +54,14 @@ public class Validation {
         
         Pattern pattern = Pattern.compile(regex);
         
-        Matcher matcher = pattern.matcher(username);
+        Matcher matcher = pattern.matcher(email);
         
         if (!matcher.matches()) {
             return flag = false;
         }
         // check duplicate username
         try {
-            ResultSet rs = dao.getUserByUsername(username);
+            ResultSet rs = dao.getUserByEmail(email);
             String nameOfUser = rs.getString("username");
             if (nameOfUser != null) {
                 return flag = false;
@@ -72,7 +72,7 @@ public class Validation {
         }
         return flag;
     }
-    public boolean isValidPassword(String password) {
-        // meet up the pattern
-    }
+//    public boolean isValidPassword(String password) {
+//        // meet up the pattern
+//    }
 }
