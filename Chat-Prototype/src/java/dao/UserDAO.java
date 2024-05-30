@@ -105,9 +105,7 @@ public class UserDAO {
         boolean flag = true;
         try {
             ResultSet rs = this.getUserByUsername(username);
-            String nameOfUser = rs.getString("username");
-            if (nameOfUser != null) {
-                // username already exists
+            if (rs.next()) {  // Mean have duplicate username
                 return flag;
             }
         } catch (SQLException e) {
@@ -128,8 +126,7 @@ public class UserDAO {
         boolean flag = true;
         try {
             ResultSet rs = this.getUserByEmail(email);
-            String userEmail = rs.getString("email");
-            if (userEmail != null) {
+            if (rs.next()) {  // Mean have duplicate email
                 return flag;
             }
         } catch (SQLException e) {
