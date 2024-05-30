@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path="/loginProject">
+<Context path="/chat-prototype">
   <Resource auth="Container" driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" maxActive="20" maxIdle="10" maxWait="-1" name="conn" password="123" type="javax.sql.DataSource" url="jdbc:sqlserver://localhost:1433;databaseName=Chat_Prototype" username="sa"/>
   <Resource auth="Container" driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" maxActive="20" maxIdle="10" maxWait="-1" name="Chat_Prototype" password="123" type="javax.sql.DataSource" url="jdbc:sqlserver://localhost:1433;databaseName=Chat_Prototype" username="sa"/>
   <Resource auth="Container" driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" maxActive="20" maxIdle="10" maxWait="-1" name="jdbc/Chat_Prototype" password="123" type="javax.sql.DataSource" url="jdbc:sqlserver://localhost:1433;databaseName=Chat_Prototype" username="sa"/>
