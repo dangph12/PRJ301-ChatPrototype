@@ -55,7 +55,7 @@ public class DBContext {
      * @return Connection object
      * @throws SQLException if a database access error occurs
      */
-    public Connection getConnection(){
+    public Connection getConnection() throws SQLException{
         return conn;
     }
 
