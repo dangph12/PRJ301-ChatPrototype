@@ -61,17 +61,12 @@ public class UserDAO {
      * @return The User object retrieved from the database, or null if not
      * found.
      */
-    public ResultSet getUserByUsername(String username) {
-        String query = "SELECT * FROM [dbo].[UserLogin] WHERE "
-                + "[username] = ? ";
-        try (PreparedStatement pstmt = createPreparedStatement(query)) {
-            // modify the query here
-            pstmt.setString(1, username);
-            return executeQuery(pstmt);
-        } catch (SQLException e) {
-            System.out.println("ERROR: " + e.getMessage());
-            return null;
-        }
+    public ResultSet getUserByUsername(String username) throws SQLException {
+        String query = "Select * from UserLogin";
+        PreparedStatement pstmt = createPreparedStatement(query);
+        // modify the query here
+        //pstmt.setString(1, username);
+        return executeQuery(pstmt);
 
     }
 
@@ -105,9 +100,7 @@ public class UserDAO {
         boolean flag = true;
         try {
             ResultSet rs = this.getUserByUsername(username);
-            String nameOfUser = rs.getString("username");
-            if (nameOfUser != null) {
-                // username already exists
+            if (rs.next()) {  // Mean have duplicate username
                 return flag;
             }
         } catch (SQLException e) {
@@ -128,8 +121,7 @@ public class UserDAO {
         boolean flag = true;
         try {
             ResultSet rs = this.getUserByEmail(email);
-            String userEmail = rs.getString("email");
-            if (userEmail != null) {
+            if (rs.next()) {  // Mean have duplicate email
                 return flag;
             }
         } catch (SQLException e) {
